@@ -64,7 +64,7 @@ export default function ReadDetail() {
               </p>
 
               {book.status && (
-                <span className="inline-block mt-6 rounded-full bg-primary px-5 py-2 text-on-primary text-sm">
+                <span className="inline-block mt-6 rounded-full bg-primary px-5 py-2 text-black text-sm">
                   {book.status}
                 </span>
               )}
