@@ -72,7 +72,7 @@ export default function Article() {
 
       {/* Main Content */}
       <main className="pt-24 pb-20">
-        <article className="max-w-800px mx-auto px-margin-mobile md:px-0">
+        <article className="max-w-4xl mx-auto px-6 md:px-8 lg:px-10">
           <header className="mb-12">
             <h1
               className="
@@ -135,8 +135,8 @@ export default function Article() {
             </div>
           </header>
           {/* Featured Image */}
-          <figure className="mb-12 -mx-margin-mobile md:-mx-16">
-            <div className="aspect-[21/9] bg-surface-container overflow-hidden rounded-lg border border-outline-variant">
+          <figure className="my-16">
+            <div className="overflow-hidden rounded-xl border border-outline-variant">
               <img
                 src={article.image}
                 alt={article.title}
@@ -151,29 +151,98 @@ export default function Article() {
           <section
             className="
     prose
-    prose-lg
-    prose-invert
-    max-w-none
+prose-xl
+prose-invert
+max-w-none
 
-    prose-headings:font-serif
-    prose-headings:text-white
+prose-headings:font-serif
+prose-headings:text-white
+prose-headings:tracking-tight
 
-    prose-p:text-zinc-300
-    prose-p:leading-8
+prose-h1:text-6xl
+prose-h1:mb-10
 
-    prose-a:text-primary
+prose-h2:text-4xl
+prose-h2:font-semibold
+prose-h2:mt-20
+prose-h2:mb-8
 
-    prose-strong:text-white
+prose-h3:text-3xl
+prose-h3:font-semibold
+prose-h3:mt-16
+prose-h3:mb-6
 
-    prose-code:text-primary
+prose-p:text-zinc-300
+prose-p:text-[20px]
+prose-p:leading-[2]
+prose-p:mb-8
 
-    prose-pre:bg-zinc-900
+prose-a:text-primary
+prose-a:no-underline
+hover:prose-a:underline
 
-    prose-blockquote:border-primary
-    prose-blockquote:text-zinc-300
+prose-strong:text-white
+prose-strong:font-semibold
+
+prose-ul:my-8
+prose-ol:my-8
+prose-li:my-2
+
+prose-img:rounded-xl
+prose-img:shadow-xl
+prose-img:my-12
+
+prose-code:text-primary
+prose-code:before:hidden
+prose-code:after:hidden
+
+prose-pre:bg-zinc-900
+prose-pre:rounded-xl
+prose-pre:p-6
+
+prose-blockquote:border-l-4
+prose-blockquote:border-primary
+prose-blockquote:pl-6
+prose-blockquote:italic
+prose-blockquote:text-zinc-300
+prose-blockquote:my-10
+
+prose-hr:border-outline-variant
+prose-hr:my-16
   "
           >
-            <ReactMarkdown remarkPlugins={[remarkGfm]}>{content}</ReactMarkdown>
+            <ReactMarkdown
+              remarkPlugins={[remarkGfm]}
+              components={{
+                h2: ({ children }) => (
+                  <h2 className="mt-20 mb-8 font-serif text-4xl font-semibold text-white">
+                    {children}
+                  </h2>
+                ),
+
+                p: ({ children }) => (
+                  <p className="mb-8 text-[20px] leading-[2] text-zinc-300">
+                    {children}
+                  </p>
+                ),
+
+                blockquote: ({ children }) => (
+                  <blockquote className="my-10 border-l-4 border-primary pl-6 italic text-zinc-300">
+                    {children}
+                  </blockquote>
+                ),
+
+                ul: ({ children }) => (
+                  <ul className="my-8 list-disc pl-6">{children}</ul>
+                ),
+
+                ol: ({ children }) => (
+                  <ol className="my-8 list-decimal pl-6">{children}</ol>
+                ),
+              }}
+            >
+              {content}
+            </ReactMarkdown>
           </section>
           {/* Engagement Bar */}
           <footer className="mt-16 pt-8 border-t border-outline-variant flex items-center justify-between">
