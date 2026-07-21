@@ -1,0 +1,24 @@
+@import "tailwindcss";
+
+@theme {
+  /* Register Font */
+  --font-geist: "Geist", sans-serif;
+  --font-playfair: "Playfair Display", serif;
+  --font-jetbrains: "JetBrains Mono", monospace;
+
+  /* Register Colors (Sesuaikan dengan desain kamu) */
+  --color-primary: #e9c176;
+  --color-surface: #121314;
+  --color-on-background: #e3e2e3;
+  --color-outline-variant: #4e4639;
+  
+  /* Register Spacing/Custom Gutter jika perlu */
+  --spacing-gutter: 24px;
+}
+
+@layer base {
+  body {
+    @apply bg-surface text-on-background font-geist;
+    margin: 0;
+  }
+}
