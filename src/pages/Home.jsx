@@ -8,6 +8,8 @@ export default function App() {
   const [setSelectedPost] = React.useState(null);
   const latestArticles = articles.slice(0, 3);
 
+  const [showCV, setShowCV] = React.useState(false);
+
   const handleReadArticle = (article) => {
     setSelectedPost(article);
     setActive("ArticleDetail");
@@ -78,14 +80,43 @@ export default function App() {
                   arrow_forward
                 </span>
               </button>
-              <button className="px-8 py-3 border border-secondary text-secondary font-label-sm rounded-lg hover:bg-secondary/10 transition-all">
+              <button
+                onClick={() => setShowCV(true)}
+                className="px-8 py-3 border border-secondary text-secondary font-label-sm rounded-lg hover:bg-secondary/10 transition-all"
+              >
                 Technical CV
               </button>
+              {showCV && (
+                <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-6">
+                  <div className="relative w-full max-w-6xl h-[90vh] bg-surface rounded-xl overflow-hidden shadow-2xl">
+                    {/* Header */}
+                    <div className="flex items-center justify-between px-6 py-4 border-b border-outline-variant">
+                      <h2 className="text-xl font-semibold text-on-surface">
+                        Technical CV
+                      </h2>
+
+                      <button
+                        onClick={() => setShowCV(false)}
+                        className="text-on-surface-variant hover:text-primary transition"
+                      >
+                        <span className="material-symbols-outlined">close</span>
+                      </button>
+                    </div>
+
+                    {/* PDF */}
+                    <iframe
+                      src="/cv/Job_CV.pdf"
+                      className="w-full h-full"
+                      title="Technical CV"
+                    />
+                  </div>
+                </div>
+              )}
             </div>
           </div>
 
           <div className="md:col-span-5 relative">
-            <div className="aspect-[4/5] bg-surface-container-low border border-outline-variant rounded-xl overflow-hidden shadow-2xl">
+            <div className="aspect-4/5 bg-surface-container-low border border-outline-variant rounded-xl overflow-hidden shadow-2xl">
               <img
                 src="/assets/arya.jpg"
                 alt="Portrait"
@@ -145,19 +176,54 @@ export default function App() {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
               {/* Education Card */}
-              <div className="md:col-span-2 bg-surface-container-low border border-outline-variant p-8 rounded-xl flex flex-col justify-between">
+              <div className="bg-surface-container-low border border-outline-variant p-8 rounded-xl">
                 <span className="material-symbols-outlined text-primary text-4xl mb-6">
                   school
                 </span>
-                <div>
-                  <h3 className="font-headline-md text-2xl mb-2">
-                    Bachelor of Computer Science
-                  </h3>
-                  <p className="font-body-md text-on-surface-variant">
-                    Specialization in Machine and Deep Learning Engineering and
-                    Data Analytics.
-                  </p>
-                </div>
+
+                <h3 className="font-headline-md text-xl mb-2">
+                  Bachelor of Computer Science
+                </h3>
+
+                <p className="font-body-md text-on-surface-variant">
+                  Diponegoro University
+                </p>
+
+                <p className="mt-4 text-sm text-on-surface-variant">
+                  Specialization in Machine Learning, Deep Learning, and Data
+                  Analytics.
+                </p>
+              </div>
+              {/* Non-Formal */}
+              <div className="bg-surface-container-low border border-outline-variant p-8 rounded-xl flex flex-col">
+                <span className="material-symbols-outlined text-primary text-4xl mb-6">
+                  workspace_premium
+                </span>
+
+                <h3 className="font-headline-md text-xl mb-2">
+                  Data Analytics Bootcamp
+                </h3>
+
+                <p className="font-body-md text-on-surface-variant">
+                  Dibimbing.id
+                </p>
+
+                <p className="mt-4 text-sm text-on-surface-variant">
+                  Intensive training in SQL, Python, Statistics, Machine
+                  Learning, and Power BI through real-world business case
+                  studies.
+                </p>
+
+                {/* Button */}
+                <button
+                  onClick={() => navigate("/bootcamp-projects")}
+                  className="mt-6 self-start inline-flex items-center gap-2 px-4 py-2 border border-primary text-primary rounded-lg hover:bg-primary/10 transition-all text-sm font-medium"
+                >
+                  Projects
+                  <span className="material-symbols-outlined text-[18px]">
+                    arrow_forward
+                  </span>
+                </button>
               </div>
               {/* Competency 1 */}
               <div className="bg-surface-container border border-outline-variant p-8 rounded-xl flex flex-col items-center text-center">

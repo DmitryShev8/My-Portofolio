@@ -6,6 +6,7 @@ import ReadingList from "./pages/ReadingList"
 import ReadDetail from "./pages/ReadDetail";
 import Detail from "./pages/Detail";
 import Article from "./pages/Article";
+import BootcampProjects from "./pages/BootcampProjects"
 
 export default function App() {
   return (
@@ -13,6 +14,7 @@ export default function App() {
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/bootcamp-projects" element={<BootcampProjects/>} />
         <Route path="/portfolio" element={<Portfolio />} />
         <Route path="/reading-list" element={<ReadingList />} />
         <Route path="/reading-list/:id" element={<ReadDetail />} />
