@@ -143,7 +143,7 @@ export default function Home() {
                     10+
                   </span>
                   <span className="font-label-sm text-[10px] text-on-surface-variant uppercase">
-                    Deployments
+                    Projects Completed
                   </span>
                 </div>
               </div>
