@@ -21,43 +21,43 @@ export const portfolios = [
     },
 
     executiveSummary: {
-      problem: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.`,
+      problem: `Managing academic administration manually can be inefficient, especially when different stakeholders require different levels of access and responsibilities. Students need an easy way to register courses and monitor their academic performance, lecturers require an efficient system for grading, and administrators need centralized tools to oversee academic operations.`,
 
-      approach: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.`,
+      approach: `Developed a web-based Campus Information System that supports three user roles Administrator, Lecturer, and Student with role-based access control. The system implements full CRUD functionality, enabling administrators to manage academic data, lecturers to submit and update student grades, and students to enroll in courses (KRS) while monitoring their GPA (IPK) through an intuitive interface.`,
 
-      outcome: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet.`,
+      outcome: `Successfully built a full-stack web application implementing authentication, role-based authorization, CRUD operations, and academic management workflows. The system provided a centralized platform for administrators, lecturers, and students to efficiently manage academic activities while improving the overall user experience.`,
     },
 
     workflow: [
       {
         icon: "design_services",
         title: "Requirement Analysis",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        description: "Conducted requirement analysis by identifying functional and non-functional requirements for each user role. Defined role-specific use cases for Administrators, Lecturers, and Students, including academic monitoring, grade management, course registration (KRS), and GPA (IPK) tracking.",
       },
       {
         icon: "account_tree",
         title: "System Design",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        description: "Designed the system architecture, database schema, and application workflows using Laravel as the backend framework and MySQL as the relational database. Implemented role-based access control to ensure secure and appropriate access for each user type.",
       },
       {
         icon: "code",
         title: "Application Development",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        description: "Developed a full-stack web application with authentication, authorization, and complete CRUD functionality. Implemented modules for student course registration, GPA visualization, lecturer grading, and administrative monitoring within a responsive web interface.",
       },
       {
         icon: "bug_report",
         title: "Testing & Validation",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        description: "Performed Black Box Testing to validate all functional requirements, ensuring each feature operated correctly according to user role permissions and system specifications.",
       },
       {
         icon: "cloud_upload",
         title: "Deployment",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        description: "Deployed the application to a web server, configured the production database, and verified that all modules, including authentication, academic management, and role-based access—functioned reliably in the production environment.",
       },
       {
         icon: "support_agent",
         title: "Maintenance",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        description: "Provided ongoing maintenance by fixing reported issues, improving system performance, and implementing feature enhancements based on user feedback to ensure the application's long-term reliability and usability.",
       },
     ],
 
@@ -106,17 +106,17 @@ public function store(Request $request)
 
     challenges: [
       {
-        title: "System Integration",
+        title: "Role-Based Access Control",
         description:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "Different users, including administrators, lecturers, and students—require distinct permissions and workflows, making secure access management a critical challenge.",
         solution:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore.",
+          "Implemented a role-based access control (RBAC) system that ensures each user can only access features relevant to their responsibilities, such as academic monitoring for administrators, grade management for lecturers, and course registration and GPA tracking for students.",
       },
       {
         title: "Database Consistency",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        description: "Academic data such as student records, course registrations (KRS), and grades must remain accurate and synchronized to prevent inconsistencies across the system.",
         solution:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnis iste natus error sit voluptatem.",
+          "Designed a normalized MySQL database with relational constraints and implemented CRUD operations through Laravel, ensuring data integrity and consistency across all academic modules.",
       },
     ],
 
@@ -173,43 +173,43 @@ public function store(Request $request)
     },
 
     executiveSummary: {
-      problem: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.`,
+      problem: `Oil production companies require accurate production forecasting and a centralized information system to monitor production performance and support operational decision-making. However, manual analysis makes it difficult to evaluate production trends efficiently.`,
 
-      approach: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.`,
+      approach: `Developed a web-based information system and implemented the Inferred Production forecasting method to estimate future crude oil production. The application visualizes prediction results through interactive line charts, enabling users to evaluate model performance and analyze production trends effectively.`,
 
-      outcome: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet.`,
+      outcome: `Successfully delivered a web application that enables users to monitor predicted crude oil production, compare forecasted and historical trends using line chart visualizations, and support more informed production planning and evaluation.`,
     },
 
     workflow: [
       {
         icon: "sensors",
         title: "Data Collection",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        description: "Collected historical crude oil production data from wells in the Rokan region, covering the 2023–2024 period. The dataset included well specifications, production records, and operational parameters required for forecasting and performance analysis.",
       },
       {
         icon: "cleaning_services",
         title: "Data Cleaning",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        description: "Preprocessed the dataset by resolving missing values, correcting data inconsistencies, standardizing formats, and converting data types to ensure accuracy and reliability for analysis and prediction.",
       },
       {
         icon: "sync_alt",
         title: "Data Integration",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        description: "Integrated the processed dataset into a web-based information system, enabling seamless access to production data through an interactive dashboard for monitoring well performance and operational metrics.",
       },
       {
         icon: "analytics",
         title: "Data Analysis",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        description: "Analyzed historical production trends and identified key factors influencing crude oil output. The analysis helped distinguish high-performing and low-performing wells while providing insights into production behavior over time.",
       },
       {
         icon: "dashboard",
         title: "Dashboard Development",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        description: "Designed and developed an interactive dashboard that visualizes production metrics, well performance, and forecasting results through informative charts and analytics, allowing users to explore production data efficiently.",
       },
       {
         icon: "monitoring",
         title: "Deployment & Monitoring",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        description: "Deployed the web-based information system with a CSV upload feature that allows users to submit new well data for crude oil production forecasting. The system generates prediction results and continuously supports production monitoring and performance evaluation.",
       },
     ],
 
@@ -259,15 +259,15 @@ summary.to_csv("production_summary.csv")`,
       {
         title: "Data Integration",
         description:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "Crude oil production data originated from multiple sources and contained inconsistent formats, making it difficult to centralize and visualize the information within a single system.",
         solution:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore.",
+          "Integrated the cleaned production dataset into a web-based information system, enabling seamless data synchronization and providing an interactive dashboard for monitoring well performance and production metrics.",
       },
       {
-        title: "Real-Time Monitoring",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        title: "Production Forecasting",
+        description: "Evaluating future crude oil production based solely on historical records is time-consuming and often leads to inefficient production planning.",
         solution:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnis iste natus error sit voluptatem.",
+          "Implemented the Inferred Production forecasting method with a CSV upload feature, allowing users to generate production predictions and compare forecast results with historical trends through interactive line charts.",
       },
     ],
 
@@ -325,43 +325,43 @@ summary.to_csv("production_summary.csv")`,
     },
 
     executiveSummary: {
-      problem: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.`,
+      problem: `Solo is one of the most popular tourist destinations in Central Java, Indonesia. However, visitors and tourists often struggle to identify attractions that match their personal interests and travel preferences, making trip planning less efficient.`,
 
-      approach: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.`,
+      approach: `Collaborated with a team to develop Journey On Solo, a mobile travel application that provides destination information and personalized attraction recommendations based on user preferences. The application was designed to simplify trip planning by helping users discover places that best fit their interests.`,
 
-      outcome: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet.`,
+      outcome: `The application successfully displayed personalized destination recommendations in a dedicated highlight section and integrated with Google Maps, allowing users to view detailed location information and navigate directly to recommended attractions.`,
     },
 
     workflow: [
       {
         icon: "travel_explore",
         title: "Requirement Analysis",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        description: "We analyzed the needs of tourists visiting Solo and identified the challenges they face in finding attractions that match their interests. Based on these findings, we defined the application's core features and recommendation criteria.",
       },
       {
         icon: "design_services",
         title: "UI/UX Design",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        description: "We designed an intuitive and user-friendly mobile interface by creating wireframes and user flows that prioritized a seamless travel planning experience.",
       },
       {
         icon: "smartphone",
         title: "Mobile Development",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        description: "We developed the mobile application and implemented essential features, including destination browsing, attraction details, and a personalized recommendation interface.",
       },
       {
         icon: "psychology",
         title: "Recommendation Engine",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        description: "We built a recommendation engine that suggests tourist destinations based on users' selected preferences, enabling a more personalized and relevant travel experience.",
       },
       {
         icon: "bug_report",
         title: "Testing",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        description: "We performed functional and usability testing to ensure the application operated reliably, resolved identified issues, and refined the overall user experience.",
       },
       {
         icon: "rocket_launch",
         title: "Deployment",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        description: "We deployed the application and integrated Google Maps, allowing users to view destination details and navigate directly to recommended attractions.",
       },
     ],
 
@@ -415,15 +415,15 @@ recommendation_model.fit(users, places)`,
       {
         title: "Recommendation Accuracy",
         description:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "Tourists have different travel preferences, making it difficult to recommend destinations that are relevant to every user.",
         solution:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore.",
+          "We developed a preference-based recommendation system that analyzes users' selected interests and highlights attractions that best match their travel preferences, enabling a more personalized travel experience.",
       },
       {
-        title: "Real-Time Synchronization",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        title: "Google Maps Integration",
+        description: "Finding the exact location of recommended attractions and navigating to them can be inconvenient when users have to switch between multiple applications.",
         solution:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnis iste natus error sit voluptatem.",
+          "We integrated Google Maps into the application, allowing users to view destination details and launch turn-by-turn navigation directly from the recommended attraction.",
       },
     ],
 

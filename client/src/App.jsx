@@ -21,7 +21,7 @@ export default function App() {
         <Route path="/reading-list" element={<ReadingList />} />
         <Route path="/reading-list/:id" element={<ReadDetail />} />
         <Route path="/portfolio/:id" element={<Detail />} />
-        <Route path="/article/:id" element={<Article />} />
+        <Route path="/articles/:slug" element={<Article />} />
       </Routes>
     </>
   );

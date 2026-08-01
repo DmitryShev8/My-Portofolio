@@ -52,7 +52,7 @@ export default function ReadDetail() {
             {/* Recommendation */}
 
             <div className="flex items-center gap-4 border-y border-outline-variant py-6 mt-10">
-              <div className="w-12 h-12 rounded-full bg-primary text-on-primary flex items-center justify-center font-bold">
+              <div className="w-12 h-12 rounded-full bg-primary text-black flex items-center justify-center font-bold">
                 {book.author[0]}
               </div>
 

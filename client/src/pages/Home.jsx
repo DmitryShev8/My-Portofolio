@@ -1,23 +1,17 @@
-import React from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { articles } from "../data/articles";
 import Layout from "../components/layout/Layout";
+import { Link } from "react-router-dom";
+import articles from "../data/articles.json";
 
 export default function Home() {
   const navigate = useNavigate();
-  const [setActive] = React.useState(null);
-  const [setSelectedPost] = React.useState(null);
-  const latestArticles = articles.slice(0, 3);
-  const [prompt, setPrompt] = React.useState("");
-  const [loading, setLoading] = React.useState(false);
-  const [generatedImage, setGeneratedImage] = React.useState(null);
+  const [prompt, setPrompt] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [generatedImage, setGeneratedImage] = useState(null);
 
-  const [showCV, setShowCV] = React.useState(false);
+  const [showCV, setShowCV] = useState(false);
 
-  const handleReadArticle = (article) => {
-    setSelectedPost(article);
-    setActive("ArticleDetail");
-  };
 
   const handleGenerate = async () => {
     setLoading(true);
@@ -160,6 +154,7 @@ export default function Home() {
           <div className="mt-12 md:mt-16"></div>
 
           {/* ================= AI CARD ================= */}
+          {/*
           <div className="bg-surface-container-low border border-outline-variant rounded-xl p-6">
             <h3 className="font-headline-md mb-2">🎨 Play with Arya AI</h3>
 
@@ -182,6 +177,7 @@ export default function Home() {
               {loading ? "Generating..." : "Generate"}
             </button>
           </div>
+          */}
         </div>
       </section>
 
@@ -349,22 +345,24 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-6 md:px-16">
           <div className="flex justify-between items-center mb-12">
             <h2 className="font-headline-lg text-4xl">Articles</h2>
-            <a
+
+            <Link
+              to="/articles"
               className="font-label-sm text-primary flex items-center gap-1 hover:underline"
-              href="#"
             >
-              EXPLORE_ALL{" "}
+              EXPLORE ALL
               <span className="material-symbols-outlined text-[14px]">
                 arrow_outward
               </span>
-            </a>
+            </Link>
           </div>
+
           <div className="space-y-6">
             {articles.slice(0, 2).map((article) => (
               <ArticleCard
                 key={article.id}
                 article={article}
-                onClick={() => navigate(`/article/${article.id}`)}
+                onClick={() => navigate(`/articles/${article.slug}`)}
               />
             ))}
           </div>
@@ -379,16 +377,26 @@ function ArticleCard({ article, onClick }) {
   return (
     <article
       onClick={onClick}
-      className="group bg-surface border border-outline-variant p-8 rounded-xl flex flex-col md:flex-row justify-between items-start md:items-center gap-6 hover:bg-surface-container-highest transition-all cursor-pointer"
+      className="group bg-surface border border-outline-variant rounded-xl overflow-hidden md:flex cursor-pointer hover:bg-surface-container-highest transition"
     >
-      <div className="space-y-2">
-        <div className="flex items-center gap-3">
+      <img
+        src={article.thumbnail}
+        alt={article.title}
+        className="w-full md:w-72 h-52 object-cover"
+      />
+
+      <div className="flex-1 p-8">
+        <div className="flex items-center gap-3 mb-3">
           <span className="font-code-block text-[10px] text-primary bg-primary/10 px-2 py-0.5 rounded">
-            {article.tag}
+            {article.categories?.[0] ?? "Article"}
           </span>
 
           <time className="font-label-sm text-[10px] text-on-surface-variant">
-            {article.date}
+            {new Date(article.publishedAt).toLocaleDateString("en-US", {
+              day: "numeric",
+              month: "short",
+              year: "numeric",
+            })}
           </time>
         </div>
 
@@ -396,14 +404,16 @@ function ArticleCard({ article, onClick }) {
           {article.title}
         </h3>
 
-        <p className="font-body-md text-on-surface-variant max-w-2xl">
-          {article.desc}
+        <p className="mt-3 font-body-md text-on-surface-variant max-w-2xl line-clamp-3">
+          {article.excerpt}
         </p>
       </div>
 
-      <span className="material-symbols-outlined text-outline group-hover:text-primary group-hover:translate-x-2 transition-all">
-        east
-      </span>
+      <div className="flex items-center px-8">
+        <span className="material-symbols-outlined text-outline group-hover:text-primary group-hover:translate-x-2 transition-all">
+          east
+        </span>
+      </div>
     </article>
   );
 }
