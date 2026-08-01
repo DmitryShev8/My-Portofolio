@@ -1,323 +1,171 @@
-import Layout from "../components/layout/Layout";
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&amp;family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&amp;family=Geist:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;background-color:#121314;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"secondary":"#a4c9ff","secondary-fixed-dim":"#a4c9ff","on-background":"#e3e2e3","surface-variant":"#343536","on-secondary-fixed":"#001c39","inverse-primary":"#775a19","on-error-container":"#ffdad6","surface-container-high":"#292a2b","surface-container-lowest":"#0d0e0f","on-surface-variant":"#d1c5b4","on-tertiary-container":"#393b3d","outline":"#9a8f80","on-secondary-container":"#d0e1ff","on-primary-container":"#4e3700","surface":"#121314","on-tertiary-fixed-variant":"#454749","on-secondary-fixed-variant":"#004883","surface-tint":"#e9c176","on-tertiary":"#2f3133","primary-fixed-dim":"#e9c176","primary-fixed":"#ffdea5","on-tertiary-fixed":"#1a1c1e","error":"#ffb4ab","on-primary":"#412d00","inverse-surface":"#e3e2e3","on-error":"#690005","on-primary-fixed":"#261900","primary":"#e9c176","surface-bright":"#38393a","primary-container":"#c5a059","surface-dim":"#121314","on-primary-fixed-variant":"#5d4201","on-secondary":"#00315d","tertiary-container":"#a4a5a7","surface-container-highest":"#343536","secondary-container":"#0164b4","error-container":"#93000a","tertiary":"#c6c6c9","on-surface":"#e3e2e3","surface-container-low":"#1b1c1d","surface-container":"#1f2021","tertiary-fixed-dim":"#c6c6c9","tertiary-fixed":"#e2e2e5","inverse-on-surface":"#303031","outline-variant":"#4e4639","background":"#121314","secondary-fixed":"#d4e3ff"},borderRadius:{DEFAULT:"0.125rem",lg:"0.25rem",xl:"0.5rem",full:"0.75rem"},spacing:{gutter:"24px","margin-desktop":"64px",unit:"8px","container-max":"1200px","margin-mobile":"20px"},fontFamily:{"body-lg":["Geist"],"headline-lg-mobile":["Playfair Display"],"code-block":["JetBrains Mono"],"headline-lg":["Playfair Display"],"headline-md":["Playfair Display"],"body-md":["Geist"],"label-sm":["JetBrains Mono"],"headline-xl":["Playfair Display"]},fontSize:{"body-lg":["18px",{lineHeight:"28px",fontWeight:"400"}],"headline-lg-mobile":["28px",{lineHeight:"36px",fontWeight:"600"}],"code-block":["14px",{lineHeight:"22px",fontWeight:"400"}],"headline-lg":["32px",{lineHeight:"40px",fontWeight:"600"}],"headline-md":["24px",{lineHeight:"32px",fontWeight:"500"}],"body-md":["16px",{lineHeight:"24px",fontWeight:"400"}],"label-sm":["13px",{lineHeight:"16px",letterSpacing:"0.05em",fontWeight:"500"}],"headline-xl":["48px",{lineHeight:"56px",letterSpacing:"-0.02em",fontWeight:"700"}]}}}}</script></head><body class="bg-surface font-body-md text-on-surface selection:bg-primary-container selection:text-on-primary-container"><header class="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-md border-b border-outline-variant/30"><div class="h-16 max-w-[1200px] mx-auto px-gutter flex items-center justify-between"><div class="flex items-center gap-2"><span class="material-symbols-outlined text-primary">auto_stories</span><span class="font-headline-md text-headline-md tracking-tight">Digital Archive</span></div><nav class="hidden md:flex items-center gap-8 h-full" data-active-classes="text-primary border-b-2 border-primary"><a class="h-full flex items-center text-label-sm font-label-sm text-on-surface-variant hover:text-on-surface transition-colors border-b-2 border-transparent" data-path="education" href="#">EDUCATION</a><a class="h-full flex items-center text-label-sm font-label-sm text-on-surface-variant hover:text-on-surface transition-colors border-b-2 border-transparent" data-path="reading-list" href="#">READING LIST</a><a aria-current="page" class="h-full flex items-center font-label-sm transition-colors text-primary border-b-2 border-primary" data-path="articles" href="#">ARTICLES</a></nav><div class="flex items-center gap-4"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-16 min-h-screen bg-surface"><div class="flex flex-col w-full">
+<!-- Section: Header & Lead -->
+<section class="max-w-[1200px] mx-auto px-gutter py-24 w-full">
+<div class="flex flex-col items-center text-center space-y-6">
+<div class="flex items-center gap-4 text-primary animate-pulse">
+<span class="h-[1px] w-12 bg-primary/40"></span>
+<span class="font-label-sm text-label-sm tracking-[0.2em] uppercase">The Registry</span>
+<span class="h-[1px] w-12 bg-primary/40"></span>
+</div>
+<h1 class="font-headline-xl text-headline-xl text-on-surface max-w-2xl">
+        Technical Writing &amp; <span class="italic text-primary">Archival Research</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl mx-auto leading-relaxed">
+        An exploration into the mechanics of distributed systems, memory safety, and the philosophical implications of digital permanence.
+      </p>
+</div>
+</section>
+<!-- Section: Article Feed -->
+<section class="max-w-[900px] mx-auto px-gutter pb-32 w-full">
+<div class="flex flex-col space-y-16">
+<!-- Article 01 -->
+<article class="group relative flex flex-col md:flex-row gap-8 items-start">
+<div class="hidden md:flex flex-col items-end pt-2 min-w-[100px]">
+<span class="font-label-sm text-label-sm text-primary/40 group-hover:text-primary transition-colors">01 / 04</span>
+<span class="font-label-sm text-[10px] text-on-surface-variant/40 mt-1 uppercase tracking-tighter">Manuscript</span>
+</div>
+<div class="flex-1 space-y-4">
+<div class="flex items-center gap-4 font-label-sm text-label-sm text-on-surface-variant/60">
+<span>MAY 12, 2024</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span>12 MIN READ</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface group-hover:text-primary transition-all duration-500 cursor-pointer">
+            The Entropy of Modern Microservices
+          </h2>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed max-w-2xl">
+            As systems grow in complexity, the thermal death of architectural coherence becomes inevitable. This paper examines the second law of thermodynamics as applied to cloud-native distributed topologies.
+          </p>
+<div class="pt-4">
+<a class="inline-flex items-center gap-2 font-label-sm text-label-sm text-primary group/link" href="#">
+              READ FULL MANUSCRIPT
+              <span class="material-symbols-outlined text-[18px] transform group-hover/link:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+</div>
+<div class="hidden lg:block w-40 h-40 flex-shrink-0 rounded-xl overflow-hidden border border-primary/20 group-hover:border-primary/40 transition-colors duration-500"><img alt="Microservices Entropy" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBWgZ120zREann9NixymoXwqCNku0ujlYuEwXe12Wl1ygsK9ahq_qVDA5-5ou2UpBjT6vTi_rej8WZ6EOH-swLydVqlxi_eOKak-V0vDsm25cMLFIUsntmVmJohDFOVoXXvwd3KL4qOyEf-VXzx5R0gPy_hBvHsveRuPQG9dtTJaAYuiWPkVz8_Zcl2SnmKdo4_tebsKCUwWXj5tIlogm6cfNHG-Av6KA4SyLKRW4pOy-1s35g5FymJ"/></div></article>
+<!-- Decorative Divider -->
+<div class="w-full h-px bg-gradient-to-r from-transparent via-outline-variant/20 to-transparent"></div>
+<!-- Article 02 -->
+<article class="group relative flex flex-col md:flex-row gap-8 items-start">
+<div class="hidden md:flex flex-col items-end pt-2 min-w-[100px]">
+<span class="font-label-sm text-label-sm text-primary/40 group-hover:text-primary transition-colors">02 / 04</span>
+<span class="font-label-sm text-[10px] text-on-surface-variant/40 mt-1 uppercase tracking-tighter">Comparative</span>
+</div>
+<div class="flex-1 space-y-4">
+<div class="flex items-center gap-4 font-label-sm text-label-sm text-on-surface-variant/60">
+<span>APR 28, 2024</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span>18 MIN READ</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface group-hover:text-primary transition-all duration-500 cursor-pointer">
+            Rust vs Go: The Memory Safety Dilemma
+          </h2>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed max-w-2xl">
+            A deep dive into the trade-offs between compile-time strictness and runtime garbage collection. We explore which paradigm truly serves the long-term stability of critical infrastructure.
+          </p>
+<div class="pt-4">
+<a class="inline-flex items-center gap-2 font-label-sm text-label-sm text-primary group/link" href="#">
+              READ FULL MANUSCRIPT
+              <span class="material-symbols-outlined text-[18px] transform group-hover/link:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+</div>
+<div class="hidden lg:block w-40 h-40 flex-shrink-0 rounded-xl overflow-hidden border border-primary/20 group-hover:border-primary/40 transition-colors duration-500"><img alt="Rust vs Go Memory Safety" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7VFtwTzKo6rGQluo6yxZdGB0gjv7HQbE8lR5Jzt1D-qMCsAFkakDjXB9Z1dPwTY47sAEIuPA3Ou95szUwv7P84HOZmTd0VOcG0Wgo4oBZB3aSKL202wQ9l49qliP8rh-yo5b7_iLGvT80Z7dgzlPUCcp9hkzrsQS18UAvz9SbOYgqyzCXpL1zz_RACgx9vcRrk_VObA4MY1RkJsrSNM-3Ghv7hWRnB7XtrMDv4mrFcK0gmv-RRr7j"/></div></article>
+<div class="w-full h-px bg-gradient-to-r from-transparent via-outline-variant/20 to-transparent"></div>
+<!-- Article 03 -->
+<article class="group relative flex flex-col md:flex-row gap-8 items-start">
+<div class="hidden md:flex flex-col items-end pt-2 min-w-[100px]">
+<span class="font-label-sm text-label-sm text-primary/40 group-hover:text-primary transition-colors">03 / 04</span>
+<span class="font-label-sm text-[10px] text-on-surface-variant/40 mt-1 uppercase tracking-tighter">Security</span>
+</div>
+<div class="flex-1 space-y-4">
+<div class="flex items-center gap-4 font-label-sm text-label-sm text-on-surface-variant/60">
+<span>MAR 15, 2024</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span>10 MIN READ</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface group-hover:text-primary transition-all duration-500 cursor-pointer">
+            Zero Trust: The Perimeter is Dead
+          </h2>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed max-w-2xl">
+            The castle-and-moat strategy has failed. In this analysis, we deconstruct the shift toward identity-centric security and why verification is the only surviving wall in modern networking.
+          </p>
+<div class="pt-4">
+<a class="inline-flex items-center gap-2 font-label-sm text-label-sm text-primary group/link" href="#">
+              READ FULL MANUSCRIPT
+              <span class="material-symbols-outlined text-[18px] transform group-hover/link:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+</div>
+<div class="hidden lg:block w-40 h-40 flex-shrink-0 rounded-xl overflow-hidden border border-primary/20 group-hover:border-primary/40 transition-colors duration-500"><img alt="Zero Trust Architecture" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCF0WeS8f645Ag4e0hQt55azNbCz8BW4wGgPNZ-B8uFDckXO0QU1cDUyKvnL22PXZ8AUXn25kGnVG7DeakMjv_d6n8GAh_pIOS2kI_PunsLrGQ_KsSwodDnhTzbLMawRHYkE9s_Le9gqvrny6LRnEDbyzhibS83VyiKAaFrfYp7hO6tOB_swd2gNVZoh--gvLqMinLkCE_c7JqSHzXzVeVw1x0ourrZ5jV1vpPW2n3ny_5w72yS1trC"/></div></article>
+<div class="w-full h-px bg-gradient-to-r from-transparent via-outline-variant/20 to-transparent"></div>
+<!-- Article 04 -->
+<article class="group relative flex flex-col md:flex-row gap-8 items-start">
+<div class="hidden md:flex flex-col items-end pt-2 min-w-[100px]">
+<span class="font-label-sm text-label-sm text-primary/40 group-hover:text-primary transition-colors">04 / 04</span>
+<span class="font-label-sm text-[10px] text-on-surface-variant/40 mt-1 uppercase tracking-tighter">Ethics</span>
+</div>
+<div class="flex-1 space-y-4">
+<div class="flex items-center gap-4 font-label-sm text-label-sm text-on-surface-variant/60">
+<span>FEB 02, 2024</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span>22 MIN READ</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface group-hover:text-primary transition-all duration-500 cursor-pointer">
+            The Ethics of Data Longevity
+          </h2>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed max-w-2xl">
+            Should data ever be truly forgotten? A philosophical inquiry into the moral responsibility of architects in an age where storage is cheap but context is expensive.
+          </p>
+<div class="pt-4">
+<a class="inline-flex items-center gap-2 font-label-sm text-label-sm text-primary group/link" href="#">
+              READ FULL MANUSCRIPT
+              <span class="material-symbols-outlined text-[18px] transform group-hover/link:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+</div>
+<div class="hidden lg:block w-40 h-40 flex-shrink-0 rounded-xl overflow-hidden border border-primary/20 group-hover:border-primary/40 transition-colors duration-500"><img alt="Data Longevity Ethics" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBL8JWZG9UYbFiyTNgQSQfoy2IfoY4dd04o1zeSMx4jkCj2UbWFJETEQREC2opcaxaCkO6L-nqoz-74TsgWRn-f8dZ-ospey2QqAzmD5wYmpYVRg-SfEvgM66a8AahVn12vl_dIFCoKyQo910FPQXcLAiiFs7Tk0vI_uENIESeotH89KaVjDZ2Rmkme_ncsHz3P11yUhL-MNX204RON7URLYXckUV-OzHvkk0MmPab4xhROwL9_2h3i"/></div></article>
+</div>
+</section>
+<!-- CTA / Newsletter -->
+<section class="w-full bg-surface-container-low py-32 mt-12 relative overflow-hidden">
+<div class="absolute inset-0 opacity-10">
+<div class="absolute top-0 left-0 w-full h-full" style="background-image: radial-gradient(circle at 2px 2px, #e9c176 1px, transparent 0); background-size: 40px 40px;"></div>
+</div>
+<div class="max-w-[1200px] mx-auto px-gutter relative z-10 flex flex-col items-center text-center">
+<span class="font-label-sm text-label-sm text-primary mb-6 tracking-widest uppercase">Subscribe to the Archive</span>
+<h3 class="font-headline-lg text-headline-lg text-on-surface mb-8">Receive technical insights weekly</h3>
+<form class="flex flex-col sm:flex-row gap-4 w-full max-w-lg" onsubmit="event.preventDefault(); this.innerHTML='&lt;div class=\'text-primary font-headline-md py-4\'&gt;Thank you. You are now subscribed.&lt;/div&gt;'">
+<input class="flex-1 bg-surface-container-highest border-b border-outline-variant/30 px-6 py-4 text-on-surface font-body-md focus:outline-none focus:border-primary transition-colors" placeholder="Email address" required="" type="email"/>
+<button class="bg-primary text-on-primary font-label-sm text-label-sm px-10 py-4 hover:bg-primary-container transition-colors uppercase tracking-widest" type="submit">
+          Subscribe
+        </button>
+</form>
+<p class="mt-8 font-label-sm text-[11px] text-on-surface-variant/50 uppercase tracking-tighter">
+        By subscribing, you agree to our digital archival policies.
+      </p>
+</div>
+</section>
+</div>
+<script>
+  // Simple intersection observer for reveal effect
+  const observerOptions = {
+    threshold: 0.1
+  };
 
-export default function Home() {
-  const navigate = useNavigate();
-  const { id } = useParams();
-  const [content, setContent] = useState("");
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('opacity-100', 'translate-y-0');
+        entry.target.classList.remove('opacity-0', 'translate-y-8');
+      }
+    });
+  }, observerOptions);
 
-  const article = articles.find((item) => item.id === Number(id));
-
-  useEffect(() => {
-    fetch(article.markdown)
-      .then((res) => res.text())
-      .then(setContent);
-  }, [article]);
-
-  if (!article) {
-    return (
-      <div className="min-h-screen flex items-center justify-center">
-        Article tidak ditemukan
-      </div>
-    );
-  }
-  return (
-    <Layout>
-
-      <article className="max-w-4xl mx-auto px-6 md:px-8 lg:px-10">
-          <header className="mb-12">
-            <h1
-              className="
-    text-6xl
-    md:text-7xl
-    font-serif
-    font-semibold
-    text-on-surface
-    mb-6
-    leading-tight
-  "
-            >
-              {article.title}
-            </h1>
-
-            <p
-              className="
-    text-2xl
-    italic
-    text-on-surface-variant
-    mb-8
-    max-w-3xl
-  "
-            >
-              {article.desc}
-            </p>
-            <div className="flex items-center justify-between py-6 border-y border-outline-variant">
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-full overflow-hidden border border-outline">
-                  <img
-                    src={article.authorImage}
-                    alt={article.author}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <div>
-                  <p className="font-headline-md text-[16px] text-on-surface font-semibold">
-                    {article.author}
-                  </p>
-                  <p className="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">
-                    {article.date} • {article.readTime}
-                  </p>
-                </div>
-              </div>
-              <div className="flex gap-4">
-                <button className="flex items-center gap-2 text-on-surface-variant hover:text-primary transition-colors">
-                  <span className="material-symbols-outlined" data-icon="share">
-                    share
-                  </span>
-                </button>
-                <button className="flex items-center gap-2 text-on-surface-variant hover:text-primary transition-colors">
-                  <span
-                    className="material-symbols-outlined"
-                    data-icon="bookmark"
-                  >
-                    bookmark
-                  </span>
-                </button>
-              </div>
-            </div>
-          </header>
-          {/* Featured Image */}
-          <figure className="my-16">
-            <div className="overflow-hidden rounded-xl border border-outline-variant">
-              <img
-                src={article.image}
-                alt={article.title}
-                className="w-full h-full object-cover opacity-80"
-              />
-            </div>
-            <figcaption className="mt-4 text-center font-label-sm text-label-sm text-on-surface-variant italic">
-              {article.imageCaption}
-            </figcaption>
-          </figure>
-          {/* Article Body */}
-          <section
-            className="
-    prose
-prose-xl
-prose-invert
-max-w-none
-
-prose-headings:font-serif
-prose-headings:text-white
-prose-headings:tracking-tight
-
-prose-h1:text-6xl
-prose-h1:mb-10
-
-prose-h2:text-4xl
-prose-h2:font-semibold
-prose-h2:mt-20
-prose-h2:mb-8
-
-prose-h3:text-3xl
-prose-h3:font-semibold
-prose-h3:mt-16
-prose-h3:mb-6
-
-prose-p:text-zinc-300
-prose-p:text-[20px]
-prose-p:leading-[2]
-prose-p:mb-8
-
-prose-a:text-primary
-prose-a:no-underline
-hover:prose-a:underline
-
-prose-strong:text-white
-prose-strong:font-semibold
-
-prose-ul:my-8
-prose-ol:my-8
-prose-li:my-2
-
-prose-img:rounded-xl
-prose-img:shadow-xl
-prose-img:my-12
-
-prose-code:text-primary
-prose-code:before:hidden
-prose-code:after:hidden
-
-prose-pre:bg-zinc-900
-prose-pre:rounded-xl
-prose-pre:p-6
-
-prose-blockquote:border-l-4
-prose-blockquote:border-primary
-prose-blockquote:pl-6
-prose-blockquote:italic
-prose-blockquote:text-zinc-300
-prose-blockquote:my-10
-
-prose-hr:border-outline-variant
-prose-hr:my-16
-  "
-          >
-            <ReactMarkdown
-              remarkPlugins={[remarkGfm]}
-              components={{
-                h2: ({ children }) => (
-                  <h2 className="mt-20 mb-8 font-serif text-4xl font-semibold text-white">
-                    {children}
-                  </h2>
-                ),
-
-                p: ({ children }) => (
-                  <p className="mb-8 text-[20px] leading-[2] text-zinc-300">
-                    {children}
-                  </p>
-                ),
-
-                blockquote: ({ children }) => (
-                  <blockquote className="my-10 border-l-4 border-primary pl-6 italic text-zinc-300">
-                    {children}
-                  </blockquote>
-                ),
-
-                ul: ({ children }) => (
-                  <ul className="my-8 list-disc pl-6">{children}</ul>
-                ),
-
-                ol: ({ children }) => (
-                  <ol className="my-8 list-decimal pl-6">{children}</ol>
-                ),
-              }}
-            >
-              {content}
-            </ReactMarkdown>
-          </section>
-          {/* Engagement Bar */}
-          <footer className="mt-16 pt-8 border-t border-outline-variant flex items-center justify-between">
-            <div className="flex items-center gap-6">
-              <button className="flex items-center gap-2 px-4 py-2 rounded-full bg-surface-container hover:bg-surface-container-high transition-all group">
-                <span
-                  className="material-symbols-outlined text-primary group-hover:scale-110 transition-transform"
-                  data-icon="auto_awesome"
-                >
-                  auto_awesome
-                </span>
-                <span className="font-label-sm text-label-sm">
-                  {article.claps} Claps
-                </span>
-              </button>
-              <button className="flex items-center gap-2 text-on-surface-variant hover:text-on-surface transition-colors">
-                <span className="material-symbols-outlined" data-icon="forum">
-                  forum
-                </span>
-                <span className="font-label-sm text-label-sm">
-                  {article.comments} Comments
-                </span>
-              </button>
-            </div>
-            <div className="flex gap-4">
-              <button className="w-10 h-10 flex items-center justify-center rounded-full border border-outline-variant hover:border-primary text-on-surface-variant hover:text-primary transition-all">
-                <span
-                  className="material-symbols-outlined text-[20px]"
-                  data-icon="ios_share"
-                >
-                  ios_share
-                </span>
-              </button>
-            </div>
-          </footer>
-        </article>
-        {/* More from the Archive Section */}
-        <section className="w-full max-w-7xl mx-auto px-6 md:px-16 mt-32">
-          <div className="flex items-end justify-between mb-12">
-            <div>
-              <h2 className="font-headline-lg text-headline-lg text-on-surface">
-                More from the Archive
-              </h2>
-              <p className="font-body-md text-body-md text-on-surface-variant">
-                Recommended reading for the focused mind.
-              </p>
-            </div>
-            <a
-              className="font-label-sm text-label-sm text-primary uppercase tracking-widest hover:underline"
-              href="#"
-            >
-              View all articles
-            </a>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-gutter">
-            {/* Related Article 1 */}
-            <div className="group flex flex-col bg-surface-container-low border border-outline-variant hover:border-primary transition-all cursor-pointer">
-              <div className="aspect-video bg-surface-container overflow-hidden">
-                <img
-                  alt="Rust vs Go"
-                  className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
-                  data-alt="A minimalist tech-themed image showing a split-screen comparison between two abstract computer languages, Rust and Go. One side uses deep blue hues and rigid geometric patterns, while the other features warm gold tones and flowing organic shapes. The lighting is low-key with sharp highlights, maintaining a professional and clean academic aesthetic suitable for a technical comparison article."
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuBAGXwSl7DlSuRxg5WnHZEcLO0awdfga7Njq80h8SgWiOYxcOib0f6QsxFlxNdLJh5EqDrKXT7o9fN8UrWm9V7Gv-mLYPltsQrIbIs7WN4U3q1OY9WWluWxfRXlvBh8QGzzj7NmZO7V9HChqeGVS1N_BSeSDqIssvJd23PMJCtEq-pjtXROp-edlAS76ZkcAllaNWnd4KThCDUWNBK6wiPIZ94A4oEhTVq-ku7Z-Nc7iIO_dORLXIJBZVgyWJ9EN8AqKDLoMKbDVPY"
-                />
-              </div>
-              <div className="p-6">
-                <span className="font-label-sm text-label-sm text-primary uppercase mb-2 block">
-                  Performance
-                </span>
-                <h3 className="font-headline-md text-[20px] text-on-surface group-hover:text-primary transition-colors mb-2">
-                  Rust vs Go: The Memory Safety Dilemma
-                </h3>
-                <p className="font-body-md text-on-surface-variant line-clamp-2">
-                  Choosing the right foundation for modern system software.
-                </p>
-              </div>
-            </div>
-            {/* Related Article 2 */}
-            <div className="group flex flex-col bg-surface-container-low border border-outline-variant hover:border-primary transition-all cursor-pointer">
-              <div className="aspect-video bg-surface-container overflow-hidden">
-                <img
-                  alt="Zero Trust Infrastructure"
-                  className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
-                  data-alt="A high-tech digital security visualization representing 'Zero Trust Infrastructure'. It features glowing laser-etched security layers and holographic shields in a deep obsidian environment. The color palette is dominated by Tech Blue accents and dark charcoal surfaces, illuminated by sharp, precise light beams that create a sense of indestructible digital architecture and sophisticated safety."
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuDEPjdFb_SHd9L0C-gt48kOEvnXHJqyGIEydlAItRFdk_9NXKBShK4MuQY4GB_H6eeKL2yydwopfwXD1YYqv2G70cUOkOSKSg0-qHuRZQ3UIlrL6nrR9KC4E0WQ_4qxiyYDjSKwhX21VT6BJVRPb6kfY4H0QRHAJyw4fRibcON-6YH8sPTD3ceheb-l-xvLMgQwsCaFCB3WlLaO5_fJaFhEMKeGcEQdGsEKz7g8gw4FDhB0U_et8sawTq1ICHWhGJ7AgUok5AF8H6g"
-                />
-              </div>
-              <div className="p-6">
-                <span className="font-label-sm text-label-sm text-primary uppercase mb-2 block">
-                  Security
-                </span>
-                <h3 className="font-headline-md text-[20px] text-on-surface group-hover:text-primary transition-colors mb-2">
-                  Zero Trust: The Perimeter is Dead
-                </h3>
-                <p className="font-body-md text-on-surface-variant line-clamp-2">
-                  Why modern networks must assume breach from the start.
-                </p>
-              </div>
-            </div>
-            {/* Related Article 3 */}
-            <div className="group flex flex-col bg-surface-container-low border border-outline-variant hover:border-primary transition-all cursor-pointer">
-              <div className="aspect-video bg-surface-container overflow-hidden">
-                <img
-                  alt="Global Archive"
-                  className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
-                  data-alt="A global network map showing glowing data clusters and satellite connections over a dark earth. The aesthetic is clean and technical, using a monochrome palette with Muted Gold pinpoints of light. The atmosphere is calm and expansive, capturing the essence of a global digital archive and interconnected human knowledge in a quiet, intelligent visual style."
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXSRuO9lbIb3wJCblqYlQE-iKq7mCBs02hbQxOzJLJLBsDp_FqQhJf87-wjeRwFVpT0PKBCabuDg7xctqz6DHbmSjATYT9YCcWdQFZKfwRxyJu4qkDbnBx_pa0nXzjf7mjZGpfZ0SSEWombD8xGMo10IIzOECxsdOg7eVQWL572MaemwxpFXMPnVKgiCQY5PsFqsZX28-MTFdDMo_3X6zDgURDoZxtjSli6rqtTXLyGczU-t5CdF83inVNrVD-AHIMqdKWg_8yKw0"
-                />
-              </div>
-              <div className="p-6">
-                <span className="font-label-sm text-label-sm text-primary uppercase mb-2 block">
-                  Curation
-                </span>
-                <h3 className="font-headline-md text-[20px] text-on-surface group-hover:text-primary transition-colors mb-2">
-                  The Ethics of Data Longevity
-                </h3>
-                <p className="font-body-md text-on-surface-variant line-clamp-2">
-                  What we choose to save defines who we are as a civilization.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-    </Layout>
-  );
-}
+  document.querySelectorAll('article').forEach(article => {
+    article.classList.add('opacity-0', 'translate-y-8', 'transition-all', 'duration-1000');
+    observer.observe(article);
+  });
+</script></main><footer class="w-full bg-surface-container-lowest border-t border-outline-variant/20 py-12 mt-20"><div class="max-w-[1200px] mx-auto px-gutter"><div class="flex flex-col md:flex-row justify-between items-start gap-8"><div class="max-w-xs"><div class="font-headline-md text-headline-md mb-4">Scholarly Portico</div><p class="font-body-md text-body-md text-on-surface-variant">A curated technical archive exploring the intersection of distributed systems and classical philosophy.</p></div><div class="flex gap-12"><div class="flex flex-col gap-2"><span class="font-label-sm text-label-sm text-primary uppercase">Navigation</span><a class="text-on-surface-variant hover:text-on-surface transition-colors" href="#">Archive</a><a class="text-on-surface-variant hover:text-on-surface transition-colors" href="#">Laboratory</a></div><div class="flex flex-col gap-2"><span class="font-label-sm text-label-sm text-primary uppercase">Contact</span><a class="text-on-surface-variant hover:text-on-surface transition-colors" href="#">Email</a><a class="text-on-surface-variant hover:text-on-surface transition-colors" href="#">Network</a></div></div></div><div class="mt-12 pt-8 border-t border-outline-variant/10 flex justify-between items-center"><span class="font-label-sm text-label-sm text-on-surface-variant/60">© 2024 TECHNICAL ARCHIVE. MANUSCRIPT TYPEFACE: GEIST &amp; PLAYFAIR.</span><div class="flex gap-4"><span class="material-symbols-outlined text-on-surface-variant hover:text-primary cursor-pointer">terminal</span><span class="material-symbols-outlined text-on-surface-variant hover:text-primary cursor-pointer">history_edu</span></div></div></div></footer></body></html>

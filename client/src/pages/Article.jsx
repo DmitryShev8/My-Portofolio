@@ -12,7 +12,8 @@ function NotFound() {
           </h1>
 
           <p className="mt-4 text-on-surface-variant">
-            The article you're looking for doesn't exist or may have been removed.
+            The article you're looking for doesn't exist or may have been
+            removed.
           </p>
 
           <Link
@@ -30,6 +31,19 @@ function NotFound() {
 export default function Article() {
   const { slug } = useParams();
   const article = articles.find((item) => item.slug === slug);
+  const relatedArticles = articles
+    .filter((item) => item.slug !== slug)
+    .sort((a, b) => {
+      // kategori sama mendapat prioritas
+      if (a.category === article.category && b.category !== article.category)
+        return -1;
+
+      if (a.category !== article.category && b.category === article.category)
+        return 1;
+
+      return 0;
+    })
+    .slice(0, 3);
 
   if (!article) {
     return <NotFound />;
@@ -41,13 +55,10 @@ export default function Article() {
         <header className="mb-12">
           <h1
             className="
-    text-6xl
-    md:text-7xl
-    font-serif
-    font-semibold
-    text-on-surface
-    mb-6
-    leading-tight
+    text-5xl
+md:text-6xl
+leading-tight
+font-bold
   "
           >
             {article.title}
@@ -111,7 +122,7 @@ export default function Article() {
         </figure>
         {/* Article Body */}
         <section
-  className="
+          className="
   prose
   prose-lg
   prose-invert
@@ -153,7 +164,7 @@ export default function Article() {
   prose-figcaption:text-sm
   prose-figcaption:text-zinc-500
 "
->
+        >
           <div
             dangerouslySetInnerHTML={{
               __html: article.content,
@@ -192,90 +203,106 @@ export default function Article() {
         </footer>
       </article>
       {/* More from the Archive Section */}
-      <section className="w-full max-w-7xl mx-auto px-6 md:px-16 mt-32">
+      <section className="w-full max-w-7xl mx-auto px-6 md:px-16 mt-32 pb-32">
         <div className="flex items-end justify-between mb-12">
           <div>
-            <h2 className="font-headline-lg text-headline-lg text-on-surface">
-              More from the Archive
+            <h2 className="font-headline-lg text-on-surface">
+              More from My Articles
             </h2>
-            <p className="font-body-md text-body-md text-on-surface-variant">
-              Recommended reading for the focused mind.
+
+            <p className="text-on-surface-variant">
+              Continue exploring similar reflections.
             </p>
           </div>
-          <a
-            className="font-label-sm text-label-sm text-primary uppercase tracking-widest hover:underline"
-            href="#"
+
+          <Link
+            to="/articles"
+            className="font-label-sm uppercase tracking-widest text-primary hover:underline"
           >
             View all articles
-          </a>
+          </Link>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-gutter">
-          {/* Related Article 1 */}
-          <div className="group flex flex-col bg-surface-container-low border border-outline-variant hover:border-primary transition-all cursor-pointer">
-            <div className="aspect-video bg-surface-container overflow-hidden">
-              <img
-                alt="Rust vs Go"
-                className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
-                data-alt="A minimalist tech-themed image showing a split-screen comparison between two abstract computer languages, Rust and Go. One side uses deep blue hues and rigid geometric patterns, while the other features warm gold tones and flowing organic shapes. The lighting is low-key with sharp highlights, maintaining a professional and clean academic aesthetic suitable for a technical comparison article."
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBAGXwSl7DlSuRxg5WnHZEcLO0awdfga7Njq80h8SgWiOYxcOib0f6QsxFlxNdLJh5EqDrKXT7o9fN8UrWm9V7Gv-mLYPltsQrIbIs7WN4U3q1OY9WWluWxfRXlvBh8QGzzj7NmZO7V9HChqeGVS1N_BSeSDqIssvJd23PMJCtEq-pjtXROp-edlAS76ZkcAllaNWnd4KThCDUWNBK6wiPIZ94A4oEhTVq-ku7Z-Nc7iIO_dORLXIJBZVgyWJ9EN8AqKDLoMKbDVPY"
-              />
-            </div>
-            <div className="p-6">
-              <span className="font-label-sm text-label-sm text-primary uppercase mb-2 block">
-                Performance
-              </span>
-              <h3 className="font-headline-md text-[20px] text-on-surface group-hover:text-primary transition-colors mb-2">
-                Rust vs Go: The Memory Safety Dilemma
-              </h3>
-              <p className="font-body-md text-on-surface-variant line-clamp-2">
-                Choosing the right foundation for modern system software.
-              </p>
-            </div>
-          </div>
-          {/* Related Article 2 */}
-          <div className="group flex flex-col bg-surface-container-low border border-outline-variant hover:border-primary transition-all cursor-pointer">
-            <div className="aspect-video bg-surface-container overflow-hidden">
-              <img
-                alt="Zero Trust Infrastructure"
-                className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
-                data-alt="A high-tech digital security visualization representing 'Zero Trust Infrastructure'. It features glowing laser-etched security layers and holographic shields in a deep obsidian environment. The color palette is dominated by Tech Blue accents and dark charcoal surfaces, illuminated by sharp, precise light beams that create a sense of indestructible digital architecture and sophisticated safety."
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDEPjdFb_SHd9L0C-gt48kOEvnXHJqyGIEydlAItRFdk_9NXKBShK4MuQY4GB_H6eeKL2yydwopfwXD1YYqv2G70cUOkOSKSg0-qHuRZQ3UIlrL6nrR9KC4E0WQ_4qxiyYDjSKwhX21VT6BJVRPb6kfY4H0QRHAJyw4fRibcON-6YH8sPTD3ceheb-l-xvLMgQwsCaFCB3WlLaO5_fJaFhEMKeGcEQdGsEKz7g8gw4FDhB0U_et8sawTq1ICHWhGJ7AgUok5AF8H6g"
-              />
-            </div>
-            <div className="p-6">
-              <span className="font-label-sm text-label-sm text-primary uppercase mb-2 block">
-                Security
-              </span>
-              <h3 className="font-headline-md text-[20px] text-on-surface group-hover:text-primary transition-colors mb-2">
-                Zero Trust: The Perimeter is Dead
-              </h3>
-              <p className="font-body-md text-on-surface-variant line-clamp-2">
-                Why modern networks must assume breach from the start.
-              </p>
-            </div>
-          </div>
-          {/* Related Article 3 */}
-          <div className="group flex flex-col bg-surface-container-low border border-outline-variant hover:border-primary transition-all cursor-pointer">
-            <div className="aspect-video bg-surface-container overflow-hidden">
-              <img
-                alt="Global Archive"
-                className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
-                data-alt="A global network map showing glowing data clusters and satellite connections over a dark earth. The aesthetic is clean and technical, using a monochrome palette with Muted Gold pinpoints of light. The atmosphere is calm and expansive, capturing the essence of a global digital archive and interconnected human knowledge in a quiet, intelligent visual style."
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXSRuO9lbIb3wJCblqYlQE-iKq7mCBs02hbQxOzJLJLBsDp_FqQhJf87-wjeRwFVpT0PKBCabuDg7xctqz6DHbmSjATYT9YCcWdQFZKfwRxyJu4qkDbnBx_pa0nXzjf7mjZGpfZ0SSEWombD8xGMo10IIzOECxsdOg7eVQWL572MaemwxpFXMPnVKgiCQY5PsFqsZX28-MTFdDMo_3X6zDgURDoZxtjSli6rqtTXLyGczU-t5CdF83inVNrVD-AHIMqdKWg_8yKw0"
-              />
-            </div>
-            <div className="p-6">
-              <span className="font-label-sm text-label-sm text-primary uppercase mb-2 block">
-                Curation
-              </span>
-              <h3 className="font-headline-md text-[20px] text-on-surface group-hover:text-primary transition-colors mb-2">
-                The Ethics of Data Longevity
-              </h3>
-              <p className="font-body-md text-on-surface-variant line-clamp-2">
-                What we choose to save defines who we are as a civilization.
-              </p>
-            </div>
-          </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {relatedArticles.map((item) => (
+            <Link
+              key={item.slug}
+              to={`/articles/${item.slug}`}
+              className="
+        group
+        flex
+        flex-col
+        overflow-hidden
+        rounded-2xl
+        bg-surface-container-low
+        border
+        border-outline-variant
+        hover:border-primary
+        transition-all
+        "
+            >
+              <div className="aspect-video overflow-hidden">
+                <img
+                  src={item.thumbnail}
+                  alt={item.title}
+                  className="
+            w-full
+            h-full
+            object-cover
+            grayscale
+            group-hover:grayscale-0
+            group-hover:scale-105
+            transition-all
+            duration-500
+            "
+                />
+              </div>
+
+              <div className="p-6 flex flex-col flex-1">
+                <span className="font-label-sm uppercase tracking-widest text-primary mb-3">
+                  {item.category}
+                </span>
+
+                <h3
+                  className="
+            text-xl
+            font-headline-md
+            group-hover:text-primary
+            transition-colors
+            "
+                >
+                  {item.title}
+                </h3>
+
+                <p
+                  className="
+            mt-3
+            text-on-surface-variant
+            line-clamp-3
+            "
+                >
+                  {item.description}
+                </p>
+
+                <div className="mt-6 flex items-center justify-between">
+                  <span className="text-sm text-on-surface-variant">
+                    {item.date}
+                  </span>
+
+                  <span
+                    className="
+              material-symbols-outlined
+              text-primary
+              group-hover:translate-x-1
+              transition-transform
+              "
+                  >
+                    arrow_forward
+                  </span>
+                </div>
+              </div>
+            </Link>
+          ))}
         </div>
       </section>
     </Layout>
